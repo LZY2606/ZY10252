@@ -34,3 +34,9 @@ coverage/
 .vite/
 .turbo/
 *.tsbuildinfo
+
+# 本地 SQLite 运行库与导出
+/data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>反应守恒审查台</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<header>
+  <h1>反应守恒审查台</h1>
+  <div class="meta">
+    <span id="fixture-meta"></span>
+    <button id="btn-refresh">重新计算</button>
+    <button id="btn-export">导出运行记录</button>
+    <button id="btn-reset" class="danger">清空并重新导入</button>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>分子图</h2>
+    <div id="molecules" class="grid"></div>
+  </section>
+
+  <section>
+    <h2>单反应守恒审查</h2>
+    <div id="reactions"></div>
+  </section>
+
+  <section>
+    <h2>反应网络 · 中间体流量</h2>
+    <div id="networks"></div>
+  </section>
+
+  <section>
+    <h2>自定义重新导入</h2>
+    <details>
+      <summary>粘贴受限本地格式（.rxn）后重放复核</summary>
+      <textarea id="reimport-text" rows="8" placeholder="molecule / reaction / network 定义..."></textarea>
+      <div><button id="btn-reimport">解析并重置导入</button> <span id="reimport-msg"></span></div>
+    </details>
+  </section>
+
+  <section>
+    <h2>运行记录（可导出，可清空后重放）</h2>
+    <table id="log-table">
+      <thead><tr><th>#</th><th>时间</th><th>操作</th><th>原始 JSON</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
